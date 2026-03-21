@@ -36,10 +36,18 @@ app.post("/upload", async (req, res) => {
     const BOT_TOKEN = process.env.BOT_TOKEN;
     const CHAT_ID = process.env.CHAT_ID;
 
-    await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
-      chat_id: CHAT_ID,
-      photo: image
-    });
+    await axios.post(
+  `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`,
+  {
+    chat_id: CHAT_ID,
+    photo: image
+  },
+  {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+);
 
     res.send("saved");
 
