@@ -32,8 +32,8 @@ app.post("/upload", async (req, res) => {
 
     fs.writeFileSync(filename, base64Data, "base64");
 
-    const BOT_TOKEN = "YOUR_TOKEN";
-    const CHAT_ID = "YOUR_CHAT_ID";
+    const BOT_TOKEN = "8357900739:AAEe5xZDHlLfIz7uH8INU0SKKkB9dh8zCTk";
+    const CHAT_ID = "297402713";
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
       chat_id: CHAT_ID,
