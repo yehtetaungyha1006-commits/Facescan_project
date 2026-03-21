@@ -1,6 +1,9 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.13.6",
+=======
+>>>>>>> 1b6f8251f40bfdc9b4e006308e0b532d1c29f341
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "multer": "^2.1.1"
