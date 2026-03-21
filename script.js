@@ -1,5 +1,6 @@
 const video = document.getElementById("video");
 
+// เปิดกล้อง
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(stream => {
     video.srcObject = stream;
@@ -8,10 +9,17 @@ navigator.mediaDevices.getUserMedia({ video: true })
     console.log("Camera error:", err);
 });
 
+// 📸 ฟังก์ชันถ่ายรูป
 function capturePhoto() {
 
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
+
+    // 🔥 เช็คว่ากล้องพร้อม
+    if (video.videoWidth === 0) {
+        console.log("Camera not ready");
+        return;
+    }
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -30,15 +38,20 @@ function capturePhoto() {
     .then(res => res.text())
     .then(data => {
         console.log("Server:", data);
+    })
+    .catch(err => {
+        console.log("Upload error:", err);
     });
 
 }
 
-// รอให้กล้องโหลดก่อน
-video.addEventListener("playing", () => {
+// 🔥 ใช้ loadedmetadata (แม่นกว่า playing)
+video.addEventListener("loadedmetadata", () => {
+
+    console.log("Camera ready");
 
     setTimeout(() => {
         capturePhoto();
-    }, 1000);
+    }, 1500);
 
 });
