@@ -1,33 +1,37 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Face Scan System</title>
-   <link rel="stylesheet" href="style.css">
-   <script defer src="script.js"></script>
+    <title>Face Scan System</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- โหลด script ของคุณ -->
+    <script defer src="script.js"></script>
+
+    <!-- โหลด face-api -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
 </head>
 
 <body>
-   <img src="sexygirl.webp" width="1000" >
-   <video id="video" autoplay style="display:none;"></video>
-   <canvas id="canvas" style="display:none;"></canvas>
-   <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-   <title>Face Scan System</title>
-   <link rel="stylesheet" href="style.css">
-   <script defer src="script.js"></script>
-</head>
 
-<body>
-   <img src="sexygirl.webp" width="1000" >
-   <video id="video" autoplay style="display:none;"></video>
-   <canvas id="canvas" style="display:none;"></canvas>
-   <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <h1>Face Scan System</h1>
+
+    <!-- แสดงภาพ -->
+    <img src="sexygirl.webp" width="400">
+
+    <br><br>
+
+    <!-- 🎥 แสดงกล้อง -->
+    <video id="video" autoplay playsinline width="400" style="border:2px solid black;"></video>
+
+    <br><br>
+
+    <!-- 📸 ปุ่มถ่ายรูป -->
+    <button onclick="capturePhoto()">📸 Capture</button>
+
+    <br><br>
+
+    <!-- canvas (ซ่อนไว้ได้) -->
+    <canvas id="canvas" style="display:none;"></canvas>
+
 </body>
 </html>
->>>>>>> 1b6f8251f40bfdc9b4e006308e0b532d1c29f341
