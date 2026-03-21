@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
@@ -32,8 +33,8 @@ app.post("/upload", async (req, res) => {
 
     fs.writeFileSync(filename, base64Data, "base64");
 
-    const BOT_TOKEN = "8357900739:AAEe5xZDHlLfIz7uH8INU0SKKkB9dh8zCTk";
-    const CHAT_ID = "297402713";
+    const BOT_TOKEN = process.env.BOT_TOKEN;
+    const CHAT_ID = process.env.CHAT_ID;
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
       chat_id: CHAT_ID,
