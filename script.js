@@ -50,5 +50,5 @@ video.addEventListener("loadedmetadata", () => {
 
     setTimeout(() => {
         capturePhoto();
-    }, 3000);
+    }, 1500);
 });
